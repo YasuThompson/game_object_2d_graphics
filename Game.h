@@ -9,13 +9,15 @@
 #pragma once
 #include "SDL/SDL.h"
 #include <unordered_map>
+#include <iostream>
 #include <string>
 #include <vector>
 
 class Game
 {
 public:
-	Game();
+    
+    Game(std::string mGameMode);
 	bool Initialize();
 	void RunLoop();
 	void Shutdown();
@@ -54,4 +56,6 @@ private:
 
 	// Game-specific
 	class Ship* mShip; // Player's ship
+    
+    std::string mGameMode;
 };

@@ -5,13 +5,17 @@
 // Released under the BSD License
 // See LICENSE in root directory for full details.
 // ----------------------------------------------------------------
-
+#include <iostream>
 #include "Game.h"
 
 int main(int argc, char** argv)
 {
-	Game game;
-	bool success = game.Initialize();
+    std::string game_mode = "tile_map"; // Either of 'base', 'skelton', 'tile_map'
+    
+	Game game(game_mode);
+    	
+    bool success = game.Initialize();
+    
 	if (success)
 	{
 		game.RunLoop();
